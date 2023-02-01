@@ -8,47 +8,36 @@ namespace AddressBook
 {
     internal class CreateContact
     {
-        internal static void EnterDetails()
+        public static List<Contact> person = new List<Contact>();
+        public static void PersonDetails()
         {
-            List<string> PersonDetails = new List<string>();
-            Console.WriteLine("Enter First Name :");
-            string firstname = Console.ReadLine();
+            Contact contacts = new Contact();
+            Console.WriteLine("Enter First Name");
+            contacts.FirstName = Console.ReadLine();
 
-            Console.WriteLine("Enter Last Name :");
-            string lastname = Console.ReadLine();
+            Console.WriteLine("Enter Last Name");
+            contacts.LastName = Console.ReadLine();
 
-            Console.WriteLine("Enter Address :");
-            string address = Console.ReadLine();
+            Console.WriteLine("Enter EmailID ");
+            contacts.Email = Console.ReadLine();
 
-            Console.WriteLine("Enter city :");
-            string city = Console.ReadLine();
+            Console.WriteLine("Enter Address");
+            contacts.Address = Console.ReadLine();
 
-            Console.WriteLine("Enter state :");
-            string state = Console.ReadLine();
+            Console.WriteLine("Enter City");
+            contacts.City = Console.ReadLine();
 
-            Console.WriteLine("Enter zipcode :");
-            string zipcode = Convert.ToString(Console.ReadLine());
+            Console.WriteLine("Enter State");
+            contacts.State = Console.ReadLine();
 
-            Console.WriteLine("Enter Mobile Number :");
-            string phonenumber = Convert.ToString(Console.ReadLine());
+            Console.WriteLine("Enter Zipcode ");
+            contacts.Zipcode = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Enter email : ");
-            string email = Console.ReadLine();
+            Console.WriteLine("Enter Phone Number");
+            contacts.PhoneNumber = Convert.ToInt32(Console.ReadLine());
 
-           Console.WriteLine("\n Person Details : ");
-
-           PersonDetails.Add(firstname);
-            PersonDetails.Add(lastname);    
-            PersonDetails.Add(address);
-            PersonDetails.Add(city);
-            PersonDetails.Add(state);
-            PersonDetails.Add(zipcode);
-            PersonDetails.Add(phonenumber);
-            PersonDetails.Add(email);
-            foreach(string i in PersonDetails)
-            { 
-                Console.WriteLine(i);
-            }
+            person.Add(contacts);
+ 
 
         }
     }
