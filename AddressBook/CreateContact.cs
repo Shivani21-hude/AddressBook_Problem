@@ -115,6 +115,30 @@ namespace AddressBook
                 }
             }
         }
-        
+        //Uc4
+        //if name of person will match the first one then it will delete
+        public static void DeleteContact()
+        {
+            Contact contacts = new Contact();
+            Console.WriteLine("Enter FirstName of person whose name you want to delete ");
+            string name = Console.ReadLine();
+            foreach (var data in person.ToList())
+            {
+                    if (data.firstname.ToUpper() == name.ToUpper())
+                    {
+                        person.Remove(data);
+                        Console.WriteLine("Contact is remove");
+
+                    }
+                    else
+
+                    {
+                        Console.WriteLine("Contact is not present");
+                    }
+                
+
+            }
+
+        }
     }
 }
