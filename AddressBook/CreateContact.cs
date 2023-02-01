@@ -8,47 +8,36 @@ namespace AddressBook
 {
     internal class CreateContact
     {
-        internal static void EnterDetails()
+      public static List<Contact> person = new List<Contact>();
+        internal static void PersonDetails()
         {
-            List<string> PersonDetails = new List<string>();
+            
+            Contact contact = new Contact();
             Console.WriteLine("Enter First Name :");
-            string firstname = Console.ReadLine();
+            contact.firstname = Console.ReadLine();
 
             Console.WriteLine("Enter Last Name :");
-            string lastname = Console.ReadLine();
+            contact.lastname = Console.ReadLine();
 
             Console.WriteLine("Enter Address :");
-            string address = Console.ReadLine();
+            contact.address = Console.ReadLine();
 
             Console.WriteLine("Enter city :");
-            string city = Console.ReadLine();
+            contact.city = Console.ReadLine();
 
             Console.WriteLine("Enter state :");
-            string state = Console.ReadLine();
+            contact.state = Console.ReadLine();
 
             Console.WriteLine("Enter zipcode :");
-            string zipcode = Convert.ToString(Console.ReadLine());
+            contact.zipcode = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Enter Mobile Number :");
-            string phonenumber = Convert.ToString(Console.ReadLine());
+            contact.phonenumber = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Enter email : ");
-            string email = Console.ReadLine();
+            Console.WriteLine("Enter email :");
+            contact.email = Console.ReadLine();
 
-           Console.WriteLine("\n Person Details : ");
-
-           PersonDetails.Add(firstname);
-            PersonDetails.Add(lastname);    
-            PersonDetails.Add(address);
-            PersonDetails.Add(city);
-            PersonDetails.Add(state);
-            PersonDetails.Add(zipcode);
-            PersonDetails.Add(phonenumber);
-            PersonDetails.Add(email);
-            foreach(string i in PersonDetails)
-            { 
-                Console.WriteLine(i);
-            }
+            person.Add(contact);
 
         }
     }
