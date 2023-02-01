@@ -14,32 +14,37 @@ namespace AddressBook
         {
 
             Contact contact = new Contact();
-            Console.WriteLine("Enter First Name :");
-            contact.firstname = Console.ReadLine();
+            Console.WriteLine("Enter the number of person whose contact details  you want to add : ");
+            int n=Convert.ToInt32(Console.ReadLine());
+            for (int i = 1; i < n; i++)
+            {
 
-            Console.WriteLine("Enter Last Name :");
-            contact.lastname = Console.ReadLine();
+                Console.WriteLine("Enter First Name :");
+                contact.firstname = Console.ReadLine();
 
-            Console.WriteLine("Enter Address :");
-            contact.address = Console.ReadLine();
+                Console.WriteLine("Enter Last Name :");
+                contact.lastname = Console.ReadLine();
 
-            Console.WriteLine("Enter city :");
-            contact.city = Console.ReadLine();
+                Console.WriteLine("Enter Address :");
+                contact.address = Console.ReadLine();
 
-            Console.WriteLine("Enter state :");
-            contact.state = Console.ReadLine();
+                Console.WriteLine("Enter city :");
+                contact.city = Console.ReadLine();
 
-            Console.WriteLine("Enter zipcode :");
-            contact.zipcode = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter state :");
+                contact.state = Console.ReadLine();
 
-            Console.WriteLine("Enter Mobile Number :");
-            contact.phonenumber = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter zipcode :");
+                contact.zipcode = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Enter email :");
-            contact.email = Console.ReadLine();
+                Console.WriteLine("Enter Mobile Number :");
+                contact.phonenumber = Convert.ToInt32(Console.ReadLine());
 
-            person.Add(contact);
+                Console.WriteLine("Enter email :");
+                contact.email = Console.ReadLine();
 
+                person.Add(contact);
+            }
         }
         //Uc3
         //Edit contact details
