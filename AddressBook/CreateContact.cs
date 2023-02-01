@@ -16,7 +16,7 @@ namespace AddressBook
             Contact contact = new Contact();
             Console.WriteLine("Enter the number of person whose contact details  you want to add : ");
             int n=Convert.ToInt32(Console.ReadLine());
-            for (int i = 1; i < n; i++)
+            for (int i = 1; i <= n; i++)
             {
 
                 Console.WriteLine("Enter First Name :");
@@ -46,6 +46,15 @@ namespace AddressBook
                 person.Add(contact);
             }
         }
+        public static void Display()
+        {
+            foreach (var data in person)
+            {
+                Console.WriteLine();
+                Console.WriteLine("1.FirstName: " + data.firstname + "\n2.LastName: " + data.lastname + "\n3.Address: " + data.address + 
+                    "\n4.City: " + data.city + "\n5.State: " + data.state + "\n6.Zipcode: " + data.zipcode + "\n7.PhoneNumber: " + data.phonenumber +"\n8.Email : " + data.email);
+            }
+        }
         //Uc3
         //Edit contact details
 
@@ -54,7 +63,7 @@ namespace AddressBook
 
             if (person.Count != 0)
             {
-                Console.WriteLine("Enter the First name  to Edit Contact of that person: ");
+                Console.WriteLine("\nEnter the First name  to Edit Contact of that person: ");
                 string name = Console.ReadLine();
                 foreach (var data in person)
                 {
