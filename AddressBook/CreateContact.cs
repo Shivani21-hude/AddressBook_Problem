@@ -10,16 +10,13 @@ namespace AddressBook
     {
 
         public static List<Contact> person = new List<Contact>();
+        Dictionary<string, List<Contact>> book = new Dictionary<string, List<Contact>>();
         public static void PersonDetails()
         {
 
             Contact contact = new Contact();
-            Console.WriteLine("Enter the number of person whose contact details  you want to add : ");
-            int n=Convert.ToInt32(Console.ReadLine());
-            for (int i = 1; i <= n; i++)
-            {
-
-                Console.WriteLine("Enter First Name :");
+          
+            Console.WriteLine("Enter First Name :");
                 contact.firstname = Console.ReadLine();
 
                 Console.WriteLine("Enter Last Name :");
@@ -44,7 +41,7 @@ namespace AddressBook
                 contact.email = Console.ReadLine();
 
                 person.Add(contact);
-            }
+            
         }
         public static void Display()
         {
@@ -52,7 +49,8 @@ namespace AddressBook
             {
                 Console.WriteLine();
                 Console.WriteLine("1.FirstName: " + data.firstname + "\n2.LastName: " + data.lastname + "\n3.Address: " + data.address + 
-                    "\n4.City: " + data.city + "\n5.State: " + data.state + "\n6.Zipcode: " + data.zipcode + "\n7.PhoneNumber: " + data.phonenumber +"\n8.Email : " + data.email);
+                    "\n4.City: " + data.city + "\n5.State: " + data.state + "\n6.Zipcode: " + data.zipcode + "\n7.PhoneNumber: " 
+                    + data.phonenumber +"\n8.Email : " + data.email);
             }
         }
         //Uc3
@@ -131,28 +129,70 @@ namespace AddressBook
         }
         //Uc4
         //if name of person will match the first one then it will delete
-        public static void DeleteContact()
+        public void DeleteContact()
         {
             Contact contacts = new Contact();
             Console.WriteLine("Enter FirstName of person whose name you want to delete ");
             string name = Console.ReadLine();
             foreach (var data in person.ToList())
             {
-                    if (data.firstname.ToUpper() == name.ToUpper())
-                    {
-                        person.Remove(data);
-                        Console.WriteLine("Contact is remove");
+                if (data.firstname.ToUpper() == name.ToUpper())
+                {
+                    person.Remove(data);
+                    Console.WriteLine("Contact is remove");
 
-                    }
-                    else
+                }
+                else
 
-                    {
-                        Console.WriteLine("Contact is not present");
-                    }
-                
+                {
+                    Console.WriteLine("Contact is not present");
+                }
+
 
             }
-
         }
+            public void AddMultipleContacts()
+            {
+                Console.WriteLine("Enter the Number of Records of persons you want to Insert");
+                int number = (int)Convert.ToInt64(Console.ReadLine());
+                while (number > 0)
+                {
+                    PersonDetails();
+                    number--;
+                }
+            }
+        public void NewUser()
+        {
+            Console.WriteLine("Enter the Bookname: ");
+            string Bookname = Console.ReadLine();
+            Console.WriteLine("Enter The Number of Contacts To Add");
+            int number = int.Parse(Console.ReadLine());
+            while (number > 0)
+            {
+
+                number--;
+                PersonDetails();
+            }
+            book.Add(Bookname, person.ToList());
+        }
+        public void DisplayList()
+        {
+            foreach (var pair in book.Keys)
+            {
+                Console.WriteLine("Address Book Name " + pair);
+                foreach (Contact data in book[pair])
+                {
+                    Console.WriteLine("****First Name***: " + data.firstname);
+                    Console.WriteLine("Last Name: " + data.lastname);
+                    Console.WriteLine("Address: " + data.address);
+                    Console.WriteLine("City : " + data.city);
+                    Console.WriteLine("State: " + data.state);
+                    Console.WriteLine("Zip : " + data.zipcode);
+                    Console.WriteLine("Phone Number: " + data.phonenumber);
+                    Console.WriteLine("EmailID: " + data.email);
+                }
+            }
+        }
+
     }
 }

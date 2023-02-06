@@ -18,6 +18,5 @@ namespace AddressBook
         public int phonenumber { get; set; }
         public string email { get; set; }
 
-
     }
 }
