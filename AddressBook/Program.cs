@@ -8,7 +8,7 @@ namespace AddressBook
     {
         public static void Main(string[] args)
         {
-           
+
             Console.WriteLine("Welcome to Address Book Program");
             CreateContact createContact = new CreateContact();
             while (true)
@@ -20,7 +20,8 @@ namespace AddressBook
                     "4) Delete contacts\n" +
                     "5) Ability to add Multiple persons in AddressBook\n" +
                      "6) Add multiple address book\n" +
-                     "7) Enter Correct number\n");
+                     "7) Display new list\n"+
+                    "8)Check Duplicate entry\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 int count = 0;
                 switch (option)
@@ -51,9 +52,14 @@ namespace AddressBook
                         break;
                     case 7:
                         createContact.DisplayList();
-                        break; ;
+                        break; 
+                    case 8:
+                        createContact.DuplicateContact();
+                        break;
                 }
             }
         }
+       
     }
 }
+       
