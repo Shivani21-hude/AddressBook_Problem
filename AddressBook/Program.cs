@@ -11,8 +11,10 @@ namespace AddressBook
             Console.WriteLine("      'Welcome to Address Book program'");
             Console.WriteLine("\n");
             CreateContact.PersonDetails();
+
             CreateContact.EditContact();
             CreateContact.DeleteContact();
+
         }
     }
 }
