@@ -9,6 +9,7 @@ namespace AddressBook
     public class CreateContact
     {
 
+
         public static List<Contact> person = new List<Contact>();
         Dictionary<string, List<Contact>> book = new Dictionary<string, List<Contact>>();
         public static void PersonDetails()
@@ -72,6 +73,7 @@ namespace AddressBook
                             Console.WriteLine("Enter the option to edit Contact \n  1.FirstName\n 2.LastName\n 3.Address\n 4.City\n 5.State\n 6.Zipcode\n 7.PhoneNumber\n");
                             int option = Convert.ToInt32(Console.ReadLine());
 
+        
                             switch (option)
                             {
                                 case 1:
