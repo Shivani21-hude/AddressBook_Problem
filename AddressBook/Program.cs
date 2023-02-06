@@ -13,7 +13,7 @@ namespace AddressBook
             CreateContact.PersonDetails();
 
             CreateContact.EditContact();
-            
+            CreateContact.DeleteContact();
 
         }
     }
