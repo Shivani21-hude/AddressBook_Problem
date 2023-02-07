@@ -235,5 +235,25 @@ namespace AddressBook
                 Console.WriteLine("The Contact Details of " + data.state + " are\n:" + data.firstname + " " + data.lastname + " " + data.city + " " + data.zipcode + " " + data.phonenumber);
             }
         }
+        //Ability to get number of contact persons i.e.count by City or State
+        public  void CountPersonByCity()
+        {
+
+            if (person.Count > 0)
+            {
+                Console.WriteLine("Enter the city to search: ");
+                string cityname = Console.ReadLine();
+                int count = 0;
+                foreach (var items in person.FindAll(x => x.city == cityname))
+                {
+                    count++;
+                }
+                Console.WriteLine("No of contacts {0} in city {1}", count, cityname);
+            }
+            else
+            {
+                Console.WriteLine("This contact is not present in AddressBook.");
+            }
+        }
     }
 }
