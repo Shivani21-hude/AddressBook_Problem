@@ -20,9 +20,10 @@ namespace AddressBook
                     "4) Delete contacts\n" +
                     "5) Ability to add Multiple persons in AddressBook\n" +
                      "6) Add multiple address book\n" +
-                     "7) Display new list\n"+
-                    "8)Check Duplicate entry\n"+
-                "9)Check person in a city\n");
+                     "7) Display new list\n" +
+                    "8)Check Duplicate entry\n" +
+                "9)Add City to Check person details\n" +
+                "10)Add State to Check Person details\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 int count = 0;
                 switch (option)
@@ -59,6 +60,9 @@ namespace AddressBook
                         break;
                     case 9:
                         createContact.CheckPersonInCity();
+                        break;
+                    case 10:
+                        createContact.CheckPersonInState();
                         break;
                 }
             }

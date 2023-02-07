@@ -213,9 +213,9 @@ namespace AddressBook
         //Ability to check person in a city or state across the multiple address book
         public void CheckPersonInCity()
         {
-            Console.WriteLine("enter the name to search: ");
+            Console.WriteLine("Enter the name to search: ");
             string personName = Console.ReadLine();
-            Console.WriteLine("enter the city to search: ");
+            Console.WriteLine("Enter the city to search: ");
             string cityname = Console.ReadLine();
 
             foreach (var data in person.FindAll(e => e.city == cityname && e.firstname == personName))
@@ -223,6 +223,17 @@ namespace AddressBook
                 Console.WriteLine("The Contact Details of " + data.city + " are\n:" + data.firstname + " " + data.lastname + " " + data.state + " " + data.zipcode + " " + data.phonenumber);
             }
         }
+        //Ability to check person in a  state across the multiple address book
+        public void CheckPersonInState()
+        {
+           
+            Console.WriteLine("Enter the State to search: ");
+            string statename = Console.ReadLine();
 
+            foreach (var data in person.FindAll(e => e.state == statename ))
+            {
+                Console.WriteLine("The Contact Details of " + data.state + " are\n:" + data.firstname + " " + data.lastname + " " + data.city + " " + data.zipcode + " " + data.phonenumber);
+            }
+        }
     }
 }
