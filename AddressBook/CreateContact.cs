@@ -210,6 +210,19 @@ namespace AddressBook
 
             }
         }
+        //Ability to check person in a city or state across the multiple address book
+        public void CheckPersonInCity()
+        {
+            Console.WriteLine("enter the name to search: ");
+            string personName = Console.ReadLine();
+            Console.WriteLine("enter the city to search: ");
+            string cityname = Console.ReadLine();
+
+            foreach (var data in person.FindAll(e => e.city == cityname && e.firstname == personName))
+            {
+                Console.WriteLine("The Contact Details of " + data.city + " are\n:" + data.firstname + " " + data.lastname + " " + data.state + " " + data.zipcode + " " + data.phonenumber);
+            }
+        }
 
     }
 }
