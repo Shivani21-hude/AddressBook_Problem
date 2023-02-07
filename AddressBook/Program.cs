@@ -25,7 +25,8 @@ namespace AddressBook
                     "8)Check Duplicate entry\n" +
                 "9)Add City to Check person details\n" +
                 "10)Add State to Check Person details\n" +
-                "11)Ability to get number of contact persons count by City");
+                "11)Ability to get number of contact persons count by City\n"+
+                "12)Ability to Sort the Entries in Address Book\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 int count = 0;
                 switch (option)
@@ -68,6 +69,9 @@ namespace AddressBook
                         break;
                     case 11:
                         createContact.CountPersonByCity();
+                        break;
+                    case 12:
+                        createContact.SortPersonName();
                         break;
                 }
             }
