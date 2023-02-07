@@ -22,7 +22,8 @@ namespace AddressBook
                     "5) Ability to add Multiple persons in AddressBook\n" +
                      "6) Add multiple address book\n" +
                      "7) Display new list\n"+
-                    "8)Check Duplicate entry\n");
+                    "8)Check Duplicate entry\n"+
+                "9)Check person in a city\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 int count = 0;
                 switch (option)
@@ -56,6 +57,9 @@ namespace AddressBook
                         break; 
                     case 8:
                         createContact.DuplicateContact();
+                        break;
+                    case 9:
+                        createContact.CheckPersonInCity();
                         break;
                 }
             }
