@@ -255,5 +255,17 @@ namespace AddressBook
                 Console.WriteLine("This contact is not present in AddressBook.");
             }
         }
+        public void SortPersonName()
+        {
+            foreach (var data in person.OrderBy(e => e.firstname))
+            {
+                Console.WriteLine("First Name: " + data.firstname);
+                Console.WriteLine("Last Name: " + data.lastname);
+                Console.WriteLine("City : " + data.city);
+                Console.WriteLine("City : " + data.state);
+                Console.WriteLine("Zip : " + data.zipcode);
+                Console.WriteLine("Phone Number: " + data.phonenumber);
+            }
+        }
     }
 }
