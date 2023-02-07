@@ -257,9 +257,23 @@ namespace AddressBook
                 Console.WriteLine("This contact is not present in AddressBook.");
             }
         }
+
+        //Ability to Sort the Entries in Address Book
         public void SortPersonName()
         {
             foreach (var data in person.OrderBy(e => e.firstname))
+            {
+                Console.WriteLine("First Name: " + data.firstname);
+                Console.WriteLine("Last Name: " + data.lastname);
+                Console.WriteLine("City : " + data.city);
+                Console.WriteLine("City : " + data.state);
+                Console.WriteLine("Zip : " + data.zipcode);
+                Console.WriteLine("Phone Number: " + data.phonenumber);
+            }
+        }
+        public  void SortbyZipcode()
+        {
+            foreach (var data in person.OrderBy(e => e.zipcode))
             {
                 Console.WriteLine("First Name: " + data.firstname);
                 Console.WriteLine("Last Name: " + data.lastname);
