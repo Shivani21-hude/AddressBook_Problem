@@ -28,7 +28,8 @@ namespace AddressBook
                 "12)Ability to Sort the Entries in Address Book\n"+
                 "13)Ability to Sort the Entries in Address Book by Zipcode\n"+
                 "14)Ability to Read the txt file\n"+
-                "15)Ability to Implement CSV Reader File\n");
+                "15)Ability to read/write person contact as CSV File\n"+
+                "16)Ability to read/write person contact as JSON File\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 int count = 0;
                 switch (option)
@@ -84,7 +85,9 @@ namespace AddressBook
                     case 15:
                         AddressBookCSVHandler.ImplementCSVDataHandling();
                         break;
-
+                    case 16:
+                        ReadCSV_And_WriteJSON.ImplementCSVToJSON();
+                        break;
                     default:
                         Console.WriteLine("Choose valid option");
                         break;
