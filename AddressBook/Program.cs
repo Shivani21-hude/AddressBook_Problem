@@ -26,7 +26,8 @@ namespace AddressBook
                 "10)Add State to Check Person details\n" +
                 "11)Ability to get number of contact persons count by City\n"+
                 "12)Ability to Sort the Entries in Address Book\n"+
-                "13)Ability to Sort the Entries in Address Book by Zipcode\n");
+                "13)Ability to Sort the Entries in Address Book by Zipcode\n"+
+                "14)Ability to read txt file\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 int count = 0;
                 switch (option)
@@ -76,8 +77,15 @@ namespace AddressBook
                     case 13:
                         createContact.SortbyZipcode();
                         break;
+                    case 14:
+                         AddressBookFileIO.ReadAllLines();
+                        break;
+                         default:
+                        Console.WriteLine("Choose valid option");
+                        break;
                 }
             }
+            
         }
        
     }
