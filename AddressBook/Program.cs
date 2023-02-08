@@ -28,7 +28,8 @@ namespace AddressBook
                 "11)Ability to get number of contact persons count by City\n"+
                 "12)Ability to Sort the Entries in Address Book\n"+
                 "13)Ability to Sort the Entries in Address Book by Zipcode\n"+
-                "14)Ability to read txt file\n");
+                "14)Ability to Read the txt file\n"+
+                "15)Ability to Read/Write Person contact as CSV File\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 int count = 0;
                 switch (option)
@@ -79,10 +80,14 @@ namespace AddressBook
                         createContact.SortbyZipcode();
                         break;
                     case 14:
-                         AddressBookFileIO.ReadAllLines();
+                        AdressBookFileIO.ReadAllLines();
                         break;
-                         default:
-                        Console.WriteLine("Choose valid option");
+                    case 15:
+                        AddressBookCSVHandler.ImplementCSVDataHandling();
+                        break;
+ 
+                        default:
+                      Console.WriteLine("Choose valid option");
                         break;
                 }
             }
