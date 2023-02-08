@@ -9,6 +9,7 @@ namespace AddressBook
         public static void Main(string[] args)
         {
 
+
             Console.WriteLine("Welcome to Address Book Program");
             CreateContact createContact = new CreateContact();
             while (true)
@@ -28,7 +29,7 @@ namespace AddressBook
                 "12)Ability to Sort the Entries in Address Book\n"+
                 "13)Ability to Sort the Entries in Address Book by Zipcode\n"+
                 "14)Ability to Read the txt file\n"+
-                "15)Ability to Implement CSV Reader File\n");
+                "15)Ability to Read/Write Person contact as CSV File\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 int count = 0;
                 switch (option)
@@ -84,12 +85,13 @@ namespace AddressBook
                     case 15:
                         AddressBookCSVHandler.ImplementCSVDataHandling();
                         break;
-
-                    default:
-                        Console.WriteLine("Choose valid option");
+ 
+                        default:
+                      Console.WriteLine("Choose valid option");
                         break;
                 }
             }
+
         }
        
     }
