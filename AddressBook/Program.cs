@@ -9,6 +9,7 @@ namespace AddressBook
         public static void Main(string[] args)
         {
 
+
             Console.WriteLine("Welcome to Address Book Program");
             CreateContact createContact = new CreateContact();
             while (true)
@@ -30,6 +31,7 @@ namespace AddressBook
                 "14)Ability to Read the txt file\n"+
                 "15)Ability to read/write person contact as CSV File\n"+
                 "16)Ability to read/write person contact as JSON File\n");
+
                 int option = Convert.ToInt32(Console.ReadLine());
                 int count = 0;
                 switch (option)
@@ -93,6 +95,7 @@ namespace AddressBook
                         break;
                 }
             }
+
         }
        
     }
